@@ -18,6 +18,7 @@ body {
 }
 .field {
   border: 2px solid black;
+  height: 50vw;
   background-image: url("images/lawn.jpg");
   background-size: 100vw;
   display: grid;
@@ -25,13 +26,13 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.hole {
+/* .hole {
   padding: 1vw;
-}
+} */
 
 img {
   width: 10vw;
-  padding: 2vw;
+  padding: 1vw;
   margin: 2vw;
 }
 
