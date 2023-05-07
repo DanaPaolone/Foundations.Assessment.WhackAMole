@@ -11,7 +11,7 @@ let clickCount = 10;
 let score = 0;
 const sound = new Audio("images/shortBoing.mp3");
 //let timer = "null";
-//I wanted to set a timer but it seems to be randomly working.  I think, because of a few other issues I've been having, my browser is running too slowly to accomodate the timer.
+//I wanted to set a timer but it seems to be randomly working.
 
 //FUNCTIONS TO:
 function runGame() {
@@ -24,7 +24,7 @@ function runGame() {
   mole.src = "images/mole.png";
   field.replaceChild(mole, hole);
 
-  //click even function includes reset hole, decrement timer, sound (should this be outside the runGame()? but I created the mole within this function?)
+  //click event function includes reset hole, decrement timer, sound (should this be outside the runGame()? but I created the mole within this function?)
   mole.addEventListener("click", function () {
     sound.play();
 
@@ -47,26 +47,34 @@ function runGame() {
 
     runGame();
   });
-
-  //set timer to start
-  // timer = setTimeout(() => {
-  //   field.replaceChild(hole, mole);
-  // runGame();
-  // }, 1500);
 }
 
 runGame();
 
-//end game
-function endGame() {
-  mole.stopPropagation();
-  // This method should stop an event
-}
-// restart game
-restartBtn.addEventListener("click", function () {
-  score = 0;
-  clickCount = 10;
-  result.innerText = "";
-  //I thought runGame() would reset the mole but it doesn't seem to be doing that.
-  runGame();
-});
+//I'm finding that the mole works correctly for several clicks, and then I suddenly get an error that reads "replaceChild' on 'Node': parameter 2 is not of type 'Node'."
+//How does it function correctly for a small, random number of times and then that happens?
+//Is it because my browser it too slow?
+//Is the sound effect too much/too long to accomodate faster clicks?
+
+//I really wanted a restart button and timer but couldn't get the basics working smoothly enough to be successful because I'm not sure what I'm troubleshooting.
+
+// //end game
+// function endGame() {
+//   mole.stopPropagation();
+//   // This method should stop an event
+// }
+
+// // restart game
+// restartBtn.addEventListener("click", function () {
+//   score = 0;
+//   clickCount = 10;
+//   result.innerText = "";
+//   //I thought runGame() would reset the mole but it doesn't seem to be doing that.
+//   runGame();
+// });
+
+// //set timer to start
+// // timer = setTimeout(() => {
+// //   field.replaceChild(hole, mole);
+// // runGame();
+// // }, 1500);
